@@ -1,15 +1,18 @@
-import { Route, Routes } from 'react-router-dom';
-import ExampleLayout from './layouts/ExampleLayout';
-import './App.css';
-import ExampleView from './views/ExampleView';
-import ExampleAboutView from './views/ExampleView/ExampleAboutView';
+import { Route, Routes } from "react-router-dom";
+import ExampleLayout from "./layouts/ExampleLayout";
+import "./App.css";
+import ExampleView from "./views/ExampleView";
+import ExampleAboutView from "./views/ExampleView/ExampleAboutView";
+import MainLayout from "./layouts/MainLayout";
 
 function App() {
   return (
     <main className="App">
       <Routes>
-        <Route path="/" element={<div>home</div>} />
-        <Route path="/about" element={<div>about</div>} />
+        <Route element={<MainLayout />}>
+          <Route path="/" element={<div>home</div>} />
+          <Route path="/about" element={<div>about</div>} />
+        </Route>
 
         {/* Como setear Layouts de ejemplo! */}
         <Route element={<ExampleLayout />}>
